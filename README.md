@@ -1,3 +1,6 @@
+This is a Go program that writes to a Google Drive Spreadsheet. We can select what to write to which cell. 
+
+Usage:
 - Start with the instructions in step 1 & 2 on 
   https://developers.google.com/drive/api/v3/quickstart/go
 - Go to your Google Drive and create a new Spredsheet. Right click on the filename 

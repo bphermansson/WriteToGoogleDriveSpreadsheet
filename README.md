@@ -1,0 +1,11 @@
+- Start with the instructions in step 1 & 2 on 
+  https://developers.google.com/drive/api/v3/quickstart/go
+- Go to your Google Drive and create a new Spredsheet. Right click on the filename 
+  and choose 'Get link' This looks like this:
+
+https://docs.google.com/spreadsheets/d/1qBE9Nf4ePYQrVwY8JQkTy-CGCG6CByXA0/edit?usp=sharing
+
+- Copy the id, the part between '/spreadsheets/d/' and '/edit', in this case 
+  '1qBE9Nf4ePYQrVwY8JQkTy-CGCG6CByXA0'. Insert this as 'spreadsheetId' in  WriteToGoogleDriveSpreadsheet.go.
+- Run with 'go run WriteToGoogleDriveSpreadsheet.go'. If everything works your Spreadsheet will 
+  get some new data. 

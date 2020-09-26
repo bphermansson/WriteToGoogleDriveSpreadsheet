@@ -6,6 +6,7 @@
 https://docs.google.com/spreadsheets/d/1qBE9Nf4ePYQrVwY8JQkTy-CGCG6CByXA0/edit?usp=sharing
 
 - Copy the id, the part between '/spreadsheets/d/' and '/edit', in this case 
-  '1qBE9Nf4ePYQrVwY8JQkTy-CGCG6CByXA0'. Insert this as 'spreadsheetId' in  WriteToGoogleDriveSpreadsheet.go.
+  '1qBE9Nf4ePYQrVwY8JQkTy-CGCG6CByXA0'. Insert this as 'spreadsheetId' in  conf.json.
 - Run with 'go run WriteToGoogleDriveSpreadsheet.go'. If everything works your Spreadsheet will 
-  get some new data. 
+  get some new data. You can adjust what to write (myval := []interface{}{"OK!"}) and in which cell (writeRange := "F1").
+

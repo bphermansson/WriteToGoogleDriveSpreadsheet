@@ -12,6 +12,9 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/
 
+# Settings & secrets
 conf.json
+token.json
+credentials.json

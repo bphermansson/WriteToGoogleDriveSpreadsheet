@@ -90,7 +90,7 @@ func main() {
 	m := f.(map[string]interface{})
 	for k, v := range m {
 		spreadsheetId = fmt.Sprintf("%s", v)
-		_ = k	// This removes the error we get because k isn't used. 
+		_ = k // This removes the error we get because k isn't used.
 	}
 
 	// Google credentials
@@ -110,9 +110,9 @@ func main() {
 		log.Fatalf("Unable to retrieve Sheets Client %v", err)
 	}
 
-	writeRange := "F1"	// Cell to write in
+	writeRange := "A1" // Cell to write in
 	var vr sheets.ValueRange
-	myval := []interface{}{"OK!"}
+	myval := []interface{}{"OK!!!"}
 	vr.Values = append(vr.Values, myval)
 	_, serr = sheetsrv.Spreadsheets.Values.Update(spreadsheetId, writeRange, &vr).ValueInputOption("RAW").Do()
 	if serr != nil {
@@ -120,4 +120,18 @@ func main() {
 	} else {
 		fmt.Println("Successfully wrote to spreadsheet.")
 	}
+
+	// Append
+	range2 := "A1"
+	// This appends two rows to the xls
+	values := [][]interface{}{[]interface{}{"b2", "c2", "d2"}, []interface{}{"b3", "c3", "d3"}}
+
+	valueInputOption := "USER_ENTERED"
+	rb := &sheets.ValueRange{
+		MajorDimension: "ROWS",
+		Values:         values,
+	}
+	resp, err := sheetsrv.Spreadsheets.Values.Append(spreadsheetId, range2, rb).ValueInputOption(valueInputOption).Do()
+	str := fmt.Sprint(resp)
+	fmt.Println("Response to append: " + str)
 }
